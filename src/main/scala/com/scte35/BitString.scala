@@ -55,7 +55,7 @@ class BitString(bitString: String) {
           case "1" => true.asInstanceOf[T]
           case "0" => false.asInstanceOf[T]
         }
-      // Any AnyRef type will be treated as HEX.
+      // Any AnyRef type value will be stringified in the form of HEX.
       case ComplexClass =>
         BigInt(bits, 2).toString(16).asInstanceOf[T]
       case _ => throw new DecoderException(s"Unknown type: $tag")
