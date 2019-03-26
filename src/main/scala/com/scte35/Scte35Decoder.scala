@@ -1,7 +1,8 @@
 package com.scte35
 
-import org.apache.commons.codec.binary.Base64
 import scala.collection.mutable
+
+import java.util.Base64
 
 /**
  * SCTE 35 Standard messages encoder.
@@ -16,7 +17,7 @@ object Scte35Decoder {
    * @return decoded content of the SCTE 35 message in mutable Map object.
    */
   def base64Decode(base64in: String): mutable.Map[String, Any] = {
-    val b64 = Base64.decodeBase64(base64in)
+    val b64 = Base64.getDecoder.decode(base64in)
     var hexString: String = ""
     for (i <- b64.indices) {
       hexString = hexString + "%02X".format(b64(i))

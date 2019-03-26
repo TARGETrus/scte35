@@ -1,7 +1,6 @@
 name := "scte35"
 
 libraryDependencies ++= Seq(
-  "commons-codec" % "commons-codec" % "1.10",
   // tests
   "org.scalatest" %% "scalatest" % "3.0.5" % Test
 )
